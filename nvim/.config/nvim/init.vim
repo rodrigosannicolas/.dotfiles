@@ -1,0 +1,149 @@
+"========================= General config =============================== "
+ syntax enable                   " Enable syntax highlighting
+ 
+ set number                      " Show line numbers
+ set relativenumber              " Toggle hybrid line numbers
+ set nowrap                      " Disable word wrapping
+ set showmatch                   " Highlight matching brace
+ set visualbell                  " Use visual bell (no beeping)
+ set signcolumn=yes              " Add extra column to the left
+ set cursorline                  " Highlight cursor line
+ set ruler                       " Show row and column ruler information
+ set colorcolumn=101             " Highlight column 101
+ set scrolloff=8                 " Start scrolling when you're 8 away
+ set termguicolors               " Enable true colors
+ set foldmethod=indent           " Enable folding
+ set foldlevelstart=99           " Open folds by default
+ set splitright                  " Open new splits to the right
+ set hlsearch                    " Highlight all search results
+ set ignorecase                  " Always case-insensitive
+ set smartcase                   " Enable smart-case search
+ set incsearch                   " Searches for strings incrementally
+ set tabstop=2                   " Indicates how many spaces a tab prints on the screen
+ set shiftwidth=2                " Number of auto-indent spaces
+ set softtabstop=2               " Number of spaces per Tab
+ set autoindent                  " Auto-indent new lines
+ set smartindent                 " Enable smart-indent
+ set smarttab                    " Enable smart-tabs
+ set undolevels=1000             " Number of undo levels
+ set backspace=indent,eol,start  " Backspace behaviour
+ set clipboard=unnamedplus       " Use system clipboard by default
+ set hidden                      " TextEdit might fail if hidden is not set
+ set updatetime=300              " Having longer updatetime (default is 4000ms) leads to noticeable delays
+ set nobackup                    " Disable backup by default
+
+let @/ = ""                     " Disable highlighting search when sourcing
+
+" ========================= Plugin config ================================ "
+" Show hidden files such as .env 
+let NERDTreeShowHidden=1
+
+" ========================= Leader mappings ============================== "
+let mapleader="["               " Map leader key to [
+
+" Manage plugins
+nnoremap <Leader>pi :PlugInstall<cr>
+nnoremap <Leader>pc :PlugClean<cr>
+nnoremap <Leader>pu :PlugUpdate<cr>
+
+" Moving through splits
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>l <C-W>l
+
+" Update current file
+nnoremap <Leader>s :w<CR>
+
+" Close current file
+nnoremap <Leader>q :q<CR>
+
+" Toggle NerdTree
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" Toggle fuzzy finder
+nnoremap <silent><Leader>f :Files<CR>
+
+" ========================= insert mappings ============================== "
+" Enter normal mode with jh
+inoremap jh <esc>
+
+" Disable arrow keys in insert mode
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+" ========================= normal mappings ============================== "
+" Navigate tabs with C-H and C-L.
+nnoremap <C-H> :tabprev<CR>
+nnoremap <C-L> :tabnext<CR>
+
+" Copy from the current position to the end with Y.
+nnoremap Y y$
+
+" Plugins
+call plug#begin('~/vim/plugged')
+    " Universal set of defaults
+    Plug 'tpope/vim-sensible'
+    " Git wrapper
+    Plug 'tpope/vim-fugitive'
+    " Status/tabline
+    Plug 'vim-airline/vim-airline'
+    " Show git diff in the sign column
+    Plug 'airblade/vim-gitgutter'
+    " NerdTree file system explorer
+    Plug 'preservim/nerdtree'
+    " Insert or delete brackets, parens, quotes in pair
+    Plug 'jiangmiao/auto-pairs'
+    " Better syntax highlighting
+    Plug 'sheerun/vim-polyglot'
+    " Conquer of completion
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " General-purpose command-line fuzzy finder
+    Plug 'junegunn/fzf.vim'
+    " Makes sure that you have the latest binary
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Plugin wrapper for prettier
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+    " Comment stuff out quickly
+    " Plug 'tpope/vim-commentary'
+    " Colorschemes
+    Plug 'joshdick/onedark.vim'
+call plug#end()
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-eslint', 'coc-json', 'coc-tsserver',]
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Exit Vim if NerdTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Set color scheme 
+colorscheme onedark
