@@ -50,22 +50,27 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 " Comment stuff out quickly
 Plug 'tpope/vim-commentary'
-" " Status/tabline
-" Plug 'vim-airline/vim-airline'
-" " Show git diff in the sign column
-" Plug 'airblade/vim-gitgutter'
-" " Better syntax highlighting
-" Plug 'sheerun/vim-polyglot'
-" " Plugin wrapper for prettier
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Dev icons
+Plug 'ryanoasis/vim-devicons'
+" Vim plugin for git
+Plug 'tpope/vim-fugitive'
+" Plugin wrapper for prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Status/tabline
+Plug 'vim-airline/vim-airline'
+" Show git diff in the sign column
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " ========================= Plugin config ================================ "
 " Show hidden files such as .env 
 let NERDTreeShowHidden=1
+" Remove NerdTree's help line from top
+let NERDTreeMinimalUI=1
 
-" CoC extensions
-" let g:coc_global_extensions = ['coc-eslint', 'coc-json', 'coc-tsserver',]
+" Auto format on save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " Enable tree sitter syntax highlighting
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
