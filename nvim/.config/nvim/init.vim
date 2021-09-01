@@ -40,8 +40,6 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 " Makes sure that you have the latest binary
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Colorscheme
-Plug 'joshdick/onedark.vim'
 " Parser generator tool
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Conquer of completion
@@ -58,8 +56,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Status/tabline
 Plug 'vim-airline/vim-airline'
-" Show git diff in the sign column
-Plug 'airblade/vim-gitgutter'
+" Colorschemes
+Plug 'arcticicestudio/nord-vim'
+Plug 'sainnhe/everforest'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " ========================= Plugin config ================================ "
@@ -71,6 +71,8 @@ let NERDTreeMinimalUI=1
 " Auto format on save
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+
+let g:everforest_background = 'hard'
 
 " Enable tree sitter syntax highlighting
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
@@ -159,4 +161,4 @@ function! s:check_back_space() abort
 endfunction
 
 " ========================= Color Scheme ================================ "
-colorscheme onedark
+colorscheme everforest
