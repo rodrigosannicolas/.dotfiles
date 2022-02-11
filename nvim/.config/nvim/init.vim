@@ -41,7 +41,9 @@ Plug 'junegunn/fzf.vim'
 " Makes sure that you have the latest binary
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Parser generator tool
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Better syntax highlighting
+Plug 'pangloss/vim-javascript'
 " Conquer of completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Insert or delete brackets, parens, quotes in pair
@@ -60,6 +62,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sainnhe/everforest'
 Plug 'joshdick/onedark.vim'
+Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 " ========================= Plugin config ================================ "
@@ -75,7 +78,7 @@ let g:prettier#autoformat_require_pragma = 0
 let g:everforest_background = 'hard'
 
 " Enable tree sitter syntax highlighting
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+" lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 " ========================= Leader mappings ============================== "
 let mapleader=" "
@@ -100,7 +103,7 @@ nnoremap <silent><Leader>f :Files<CR>
 
 " ========================= Insert Mappings ============================== "
 " Enter normal mode with jh
-inoremap jh <esc>
+inoremap jj <esc>
 
 " Disable arrow keys
 inoremap <Up> <Nop>
