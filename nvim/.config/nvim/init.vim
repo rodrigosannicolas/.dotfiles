@@ -36,9 +36,8 @@ set nobackup                    " Disable backup by default
 call plug#begin('~/vim/plugged')
 " NerdTree file system explorer
 Plug 'preservim/nerdtree'
-" General-purpose command-line fuzzy finder
+" General-purpose command-line fuzzy finder (makes sure that you have the latest binary)
 Plug 'junegunn/fzf.vim'
-" Makes sure that you have the latest binary
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Parser generator tool
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -61,8 +60,6 @@ Plug 'vim-airline/vim-airline'
 " Colorschemes
 Plug 'arcticicestudio/nord-vim'
 Plug 'sainnhe/everforest'
-Plug 'joshdick/onedark.vim'
-Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 " ========================= Plugin config ================================ "
@@ -75,6 +72,7 @@ let NERDTreeMinimalUI=1
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
+" Theme background
 let g:everforest_background = 'hard'
 
 " Enable tree sitter syntax highlighting
@@ -89,8 +87,11 @@ nnoremap <Leader>j <C-W>j
 nnoremap <Leader>k <C-W>k
 nnoremap <Leader>l <C-W>l
 
+" Redo
+nnoremap <Leader>u <C-R>
+
 " Update current file
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>s :wa<CR>
 
 " Close current file
 nnoremap <Leader>q :q<CR>
@@ -99,10 +100,10 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " Toggle fuzzy finder
-nnoremap <silent><Leader>f :Files<CR>
+nnoremap <Leader>f :Files<CR>
 
 " ========================= Insert Mappings ============================== "
-" Enter normal mode with jh
+" Enter normal mode with jj
 inoremap jj <esc>
 
 " Disable arrow keys
@@ -119,10 +120,6 @@ inoremap ? ?<c-g>u
 inoremap ; ;<c-g>u
 
 " ========================= Normal Mappings ============================== "
-" Navigate tabs with C-H and C-L.
-nnoremap <C-H> :tabprev<CR>
-nnoremap <C-L> :tabnext<CR>
-
 " Copy from the current position to the end with Y.
 nnoremap Y y$
 
@@ -130,6 +127,14 @@ nnoremap Y y$
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap J mzJ`z
+
+" Move to beginning/end of line
+nnoremap H ^
+nnoremap L $
+
+" Moving through tabs
+nnoremap <tab> :tabnext<CR>
+nnoremap <s-tab> :tabprev<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
