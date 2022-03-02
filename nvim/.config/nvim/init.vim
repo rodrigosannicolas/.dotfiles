@@ -40,7 +40,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Parser generator tool
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Better syntax highlighting
 Plug 'pangloss/vim-javascript'
 " Conquer of completion
@@ -58,8 +58,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Status/tabline
 Plug 'vim-airline/vim-airline'
 " Colorschemes
-Plug 'arcticicestudio/nord-vim'
 Plug 'sainnhe/everforest'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " ========================= Plugin config ================================ "
@@ -76,7 +76,7 @@ let g:prettier#autoformat_require_pragma = 0
 let g:everforest_background = 'hard'
 
 " Enable tree sitter syntax highlighting
-" lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 " ========================= Leader mappings ============================== "
 let mapleader=" "
@@ -105,12 +105,6 @@ nnoremap <Leader>f :Files<CR>
 " ========================= Insert Mappings ============================== "
 " Enter normal mode with jj
 inoremap jj <esc>
-
-" Disable arrow keys
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
 
 " Undo break points
 inoremap , ,<c-g>u
@@ -169,4 +163,4 @@ function! s:check_back_space() abort
 endfunction
 
 " ========================= Color Scheme ================================ "
-colorscheme everforest
+colorscheme everforest 
