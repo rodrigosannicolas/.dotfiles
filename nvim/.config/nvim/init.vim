@@ -1,4 +1,4 @@
-"========================= General config =============================== "
+"  =============================== General config  =============================== "
 syntax enable                   " Enable syntax highlighting
 
 set number                      " Show line numbers
@@ -9,7 +9,7 @@ set visualbell                  " Use visual bell (no beeping)
 set signcolumn=yes              " Add extra column to the left
 set cursorline                  " Highlight cursor line
 set ruler                       " Show row and column ruler information
-set colorcolumn=101             " Highlight column 101
+set colorcolumn=79             " Highlight column 101 for js or 79 for python
 set scrolloff=8                 " Start scrolling when you're 8 away
 set termguicolors               " Enable true colors
 set foldmethod=indent           " Enable folding
@@ -32,37 +32,40 @@ set hidden                      " TextEdit might fail if hidden is not set
 set updatetime=300              " Having longer updatetime (default is 4000ms) leads to noticeable delays
 set nobackup                    " Disable backup by default
 
-"========================= Plugins ===================================== "
+"  =============================== Plugins  =============================== "
 call plug#begin('~/vim/plugged')
-" NerdTree file system explorer
-Plug 'preservim/nerdtree'
-" General-purpose command-line fuzzy finder (makes sure that you have the latest binary)
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Parser generator tool
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Better syntax highlighting
-Plug 'pangloss/vim-javascript'
-" Conquer of completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Insert or delete brackets, parens, quotes in pair
-Plug 'jiangmiao/auto-pairs'
-" Comment stuff out quickly
-Plug 'tpope/vim-commentary'
-" Dev icons
-Plug 'ryanoasis/vim-devicons'
-" Vim plugin for git
-Plug 'tpope/vim-fugitive'
-" Plugin wrapper for prettier
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" Status/tabline
-Plug 'vim-airline/vim-airline'
-" Colorschemes
-Plug 'sainnhe/everforest'
-Plug 'arcticicestudio/nord-vim'
+
+" Base plugins
+Plug 'preservim/nerdtree' " NerdTree file system explorer
+Plug 'junegunn/fzf.vim' " General-purpose command-line fuzzy finder 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Makes sure that you have the latest binary
+Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
+Plug 'tpope/vim-commentary' " Comment stuff out quickly
+
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim
+Plug 'pangloss/vim-javascript' " Better syntax highlighting for javascript
+
+" Intellisense code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of completion
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Parser generator tool
+
+" Git
+Plug 'tpope/vim-fugitive' " Vim plugin for git
+
+" Linting
+Plug 'dense-analysis/ale' " Asynchronous lint engine
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Plugin wrapper for prettier
+
+" Theme
+Plug 'vim-airline/vim-airline' " Status/tabline
+Plug 'ryanoasis/vim-devicons' " Dev icons
+Plug 'sainnhe/everforest' " Everforest colorscheme
+Plug 'arcticicestudio/nord-vim' " Nord cholorscheme
+
 call plug#end()
 
-" ========================= Plugin config ================================ "
+" ===============================  Plugin config  =============================== "
 " Show hidden files such as .env 
 let NERDTreeShowHidden=1
 " Remove NerdTree's help line from top
@@ -163,4 +166,4 @@ function! s:check_back_space() abort
 endfunction
 
 " ========================= Color Scheme ================================ "
-colorscheme everforest 
+colorscheme everforest
