@@ -9,7 +9,7 @@ set visualbell                  " Use visual bell (no beeping)
 set signcolumn=yes              " Add extra column to the left
 set cursorline                  " Highlight cursor line
 set ruler                       " Show row and column ruler information
-set colorcolumn=79             " Highlight column 101 for js or 79 for python
+set colorcolumn=101              " Highlight column 101 for js or 79 for python
 set scrolloff=8                 " Start scrolling when you're 8 away
 set termguicolors               " Enable true colors
 set foldmethod=indent           " Enable folding
@@ -37,25 +37,26 @@ call plug#begin('~/vim/plugged')
 
 " Base plugins
 Plug 'preservim/nerdtree' " NerdTree file system explorer
-Plug 'junegunn/fzf.vim' " General-purpose command-line fuzzy finder 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Makes sure that you have the latest binary
 Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
 Plug 'tpope/vim-commentary' " Comment stuff out quickly
 
+" Command line fuzzy finder
+Plug 'junegunn/fzf.vim' " General-purpose command-line fuzzy finder 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Makes sure that you have the latest binary
+
 " Syntax highlighting
-Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim
-Plug 'pangloss/vim-javascript' " Better syntax highlighting for javascript
-
-" Intellisense code completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of completion
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Parser generator tool
-
-" Git
-Plug 'tpope/vim-fugitive' " Vim plugin for git
+" Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim
 
 " Linting
 Plug 'dense-analysis/ale' " Asynchronous lint engine
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Plugin wrapper for prettier
+
+" Intellisense code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of completion
+
+" Git
+Plug 'tpope/vim-fugitive' " Vim plugin for git
 
 " Theme
 Plug 'vim-airline/vim-airline' " Status/tabline
@@ -66,17 +67,13 @@ Plug 'arcticicestudio/nord-vim' " Nord cholorscheme
 call plug#end()
 
 " ===============================  Plugin config  =============================== "
-" Show hidden files such as .env 
-let NERDTreeShowHidden=1
-" Remove NerdTree's help line from top
-let NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1 " Show hidden files such as .env 
+let NERDTreeMinimalUI=1  " Remove NerdTree's help line from top
 
-" Auto format on save
-let g:prettier#autoformat = 1
+let g:prettier#autoformat = 1 " Auto format on save
 let g:prettier#autoformat_require_pragma = 0
 
-" Theme background
-let g:everforest_background = 'hard'
+let g:everforest_background = 'hard' " Theme background
 
 " Enable tree sitter syntax highlighting
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
@@ -166,4 +163,4 @@ function! s:check_back_space() abort
 endfunction
 
 " ========================= Color Scheme ================================ "
-colorscheme everforest
+colorscheme nord 
