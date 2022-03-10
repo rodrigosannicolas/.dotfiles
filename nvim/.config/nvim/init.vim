@@ -58,6 +58,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of completion
 " Git
 Plug 'tpope/vim-fugitive' " Vim plugin for git
 
+" LaTeX support
+Plug 'lervag/vimtex'
+
 " Theme
 Plug 'vim-airline/vim-airline' " Status/tabline
 Plug 'ryanoasis/vim-devicons' " Dev icons
@@ -148,6 +151,9 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Compile .tex files on save
+autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
