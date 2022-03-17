@@ -49,7 +49,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Parser generator t
 " Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim
 
 " Linting
-Plug 'dense-analysis/ale' " Asynchronous lint engine
+" Plug 'dense-analysis/ale' " Asynchronous lint engine
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Plugin wrapper for prettier
 
 " Intellisense code completion
@@ -65,7 +65,8 @@ Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline' " Status/tabline
 Plug 'ryanoasis/vim-devicons' " Dev icons
 Plug 'sainnhe/everforest' " Everforest colorscheme
-Plug 'arcticicestudio/nord-vim' " Nord cholorscheme
+Plug 'morhetz/gruvbox' " Gruvbox colorscheme
+Plug 'joshdick/onedark.vim' " Onedark colorscheme
 
 call plug#end()
 
@@ -169,4 +170,4 @@ function! s:check_back_space() abort
 endfunction
 
 " ========================= Color Scheme ================================ "
-colorscheme nord 
+colorscheme onedark
