@@ -9,7 +9,7 @@ set visualbell                  " Use visual bell (no beeping)
 set signcolumn=yes              " Add extra column to the left
 set cursorline                  " Highlight cursor line
 set ruler                       " Show row and column ruler information
-set colorcolumn=101              " Highlight column 101 for js or 79 for python
+set colorcolumn=101             " Highlight column 101 for js or 79 for python
 set scrolloff=8                 " Start scrolling when you're 8 away
 set termguicolors               " Enable true colors
 set foldmethod=indent           " Enable folding
@@ -45,28 +45,23 @@ Plug 'junegunn/fzf.vim' " General-purpose command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Makes sure that you have the latest binary
 
 " Syntax highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Parser generator tool
-" Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Parser generator tootreesitterl
+Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim
 
 " Linting
 " Plug 'dense-analysis/ale' " Asynchronous lint engine
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Plugin wrapper for prettier
 
 " Intellisense code completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of completion
+Plug 'neoclide/coc.nvim', { 'branch': 'release' } " Conquer of completion
 
 " Git
 Plug 'tpope/vim-fugitive' " Vim plugin for git
 
-" LaTeX support
-Plug 'lervag/vimtex'
-
 " Theme
 Plug 'vim-airline/vim-airline' " Status/tabline
 Plug 'ryanoasis/vim-devicons' " Dev icons
-Plug 'sainnhe/everforest' " Everforest colorscheme
-Plug 'morhetz/gruvbox' " Gruvbox colorscheme
-Plug 'joshdick/onedark.vim' " Onedark colorscheme
+Plug 'ayu-theme/ayu-vim' " Ayu colorscheme
 
 call plug#end()
 
@@ -80,7 +75,9 @@ let g:prettier#autoformat_require_pragma = 0
 let g:everforest_background = 'hard' " Theme background
 
 " Enable tree sitter syntax highlighting
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+lua require'nvim-treesitter.configs'.setup { highlight = { enabled = true } }
+
+let ayucolor="mirage"
 
 " ========================= Leader mappings ============================== "
 let mapleader=" "
@@ -95,7 +92,7 @@ nnoremap <Leader>l <C-W>l
 nnoremap <Leader>u <C-R>
 
 " Update current file
-nnoremap <Leader>s :wa<CR>
+nnoremap <Leader>s :w<CR>
 
 " Close current file
 nnoremap <Leader>q :q<CR>
@@ -107,7 +104,7 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :Files<CR>
 
 " ========================= Insert Mappings ============================== "
-" Enter normal mode with jj
+" Enter normal mode with tab inoremap <Tab> <esc>
 inoremap jj <esc>
 
 " Undo break points
@@ -170,4 +167,4 @@ function! s:check_back_space() abort
 endfunction
 
 " ========================= Color Scheme ================================ "
-colorscheme onedark
+colorscheme ayu 
