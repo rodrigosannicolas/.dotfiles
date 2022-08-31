@@ -31,6 +31,7 @@ set clipboard=unnamedplus       " Use system clipboard by default
 set hidden                      " TextEdit might fail if hidden is not set
 set updatetime=300              " Having longer updatetime (default is 4000ms) leads to noticeable delays
 set nobackup                    " Disable backup by default
+set mouse=a                     " Enable mouse for all modes
 
 "  =============================== Plugins  =============================== "
 call plug#begin('~/vim/plugged')
@@ -92,7 +93,7 @@ nnoremap <Leader>l <C-W>l
 nnoremap <Leader>u <C-R>
 
 " Update current file
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>w :w<CR>
 
 " Close current file
 nnoremap <Leader>q :q<CR>
@@ -220,8 +221,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -239,7 +240,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Run the Code Lens action on the current line.
 nmap <leader>cl  <Plug>(coc-codelens-action)
