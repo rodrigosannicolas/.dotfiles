@@ -1,5 +1,5 @@
 require("config.set")
 require("config.nvim-tree")
-require("config.cmp")
-require("config.lspconfig")
+require("config.nvim-cmp")
+require("config.nvim-lspconfig")
 require("config.lualine")
