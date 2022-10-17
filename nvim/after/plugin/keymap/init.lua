@@ -36,3 +36,6 @@ inoremap(";", ";<c-g>u")
 
 -- Search and replace
 nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+
+-- Grep word under cursor
+nnoremap("<leader>g", ":grep --exclude-dir=node_modules -i -R <C-r><C-w> .")

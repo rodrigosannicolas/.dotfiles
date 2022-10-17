@@ -33,3 +33,4 @@ local on_attach = function(client, bufnr)
 end
 
 require("lspconfig")["tsserver"].setup{ on_attach = on_attach, flags = { debounce_text_changes = 150 } }
+require("lspconfig")["pyright"].setup{ on_attach = on_attach, flags = { debounce_text_changes = 150 } }

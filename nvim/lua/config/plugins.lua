@@ -4,6 +4,7 @@ return require("packer").startup(function(use)
 
   -- Colorscheme
   use "ayu-theme/ayu-vim"
+  use "folke/tokyonight.nvim"
 
 	-- File explorer
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } }
@@ -27,4 +28,7 @@ return require("packer").startup(function(use)
   -- Snippets
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+
+  -- Git inline blame
+  use { 'lewis6991/gitsigns.nvim' }
 end)
