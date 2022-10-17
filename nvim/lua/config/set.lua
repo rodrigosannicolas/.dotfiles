@@ -17,12 +17,13 @@ vim.opt.softtabstop = 2       -- Number of spaces per tab
 vim.opt.smarttab = true       -- Enable smart tabs
 vim.shiftwidth = 2            -- Number of auto indent spaces
 vim.opt.expandtab = true      -- Expand tabs
-vim.opt.smartindent = false    -- Enable smart indenting
+vim.opt.smartindent = false   -- Enable smart indenting
 vim.opt.updatetime = 50       -- Having longer updatetime (default is 40000ms) leads to noticable delays
 vim.opt.backup = false        -- Disable backup by default
 vim.opt.swapfile = false      -- Disable swapt file by default
-vim.opt.mouse = 'a'           -- Enable mouse for all modes
+vim.opt.mouse = "a"           -- Enable mouse for all modes
 vim.opt.hidden = true
-vim.opt.backspace = { 'indent', 'eol', 'start' }
+vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.completeopt = { "menu" , "menuone", "noselect" }
 
 vim.g.mapleader = " "         -- Map leader to empty space

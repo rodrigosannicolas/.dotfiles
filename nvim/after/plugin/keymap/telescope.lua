@@ -1,3 +1,6 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
+local Remap = require("config.keymap")
 
-vim.keymap.set('n', 'ff', builtin.find_files, {})
+local nnoremap = Remap.nnoremap
+
+nnoremap("ff", builtin.find_files)

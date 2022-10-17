@@ -7,11 +7,11 @@ require("nvim-tree").setup({
     adaptive_size = true,
     mappings = {
       list = {
-        { key = 'u', action = 'dir_up' },
-        { key = 'v', action = 'vsplit' },
-        { key = 'x', action = 'split' },
-        { key = 't', action = 'tabnew' },
-        { key = 'r', action = 'full_rename' },
+        { key = "u", action = "dir_up" },
+        { key = "v", action = "vsplit" },
+        { key = "x", action = "split" },
+        { key = "t", action = "tabnew" },
+        { key = "r", action = "full_rename" },
       },
     },
   },

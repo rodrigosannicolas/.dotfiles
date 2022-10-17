@@ -1,30 +1,38 @@
+local Remap = require("config.keymap")
+
+local nnoremap = Remap.nnoremap
+local inoremap = Remap.inoremap
+
 -- Moving through splits
-vim.keymap.set('n', '<Leader>h', '<C-W>h', {})
-vim.keymap.set('n', '<Leader>j', '<C-W>j', {})
-vim.keymap.set('n', '<Leader>k', '<C-W>k', {})
-vim.keymap.set('n', '<Leader>l', '<C-W>l', {})
+nnoremap("<Leader>h", "<C-W>h")
+nnoremap("<Leader>j", "<C-W>j")
+nnoremap("<Leader>k", "<C-W>k")
+nnoremap("<Leader>l", "<C-W>l")
 
 -- Redo
-vim.keymap.set('n', '<Leader>u', '<C-R>', {})
+nnoremap("<Leader>u", "<C-R>")
 
 -- Close current buffer
-vim.keymap.set('n', '<Leader>q', ':q<CR>', {})
+nnoremap("<Leader>q", ":q<CR>")
 
 -- Keep it centered when scrolling
-vim.keymap.set('n', 'n', 'nzz', {})
-vim.keymap.set('n', 'N', 'Nzz', {})
-vim.keymap.set('n', 'J', 'mzJ`z', {})
+nnoremap("n", "nzz")
+nnoremap("N", "Nzz")
+nnoremap("J", "mzJ`z")
 
 -- Move to begining/end of line
-vim.keymap.set('n', 'H', '^', {})
-vim.keymap.set('n', 'L', '$', {})
+nnoremap("H", "^")
+nnoremap("L", "$")
 
 -- Enter normal mode using jj
-vim.keymap.set('i', 'jj', '<esc>', {})
+inoremap("jj", "<esc>")
 
 -- Undo breakpoints
-vim.keymap.set('i', ',', ',<c-g>u', {})
-vim.keymap.set('i', '.', '.<c-g>u', {})
-vim.keymap.set('i', '!', '!<c-g>u', {})
-vim.keymap.set('i', '?', '?<c-g>u', {})
-vim.keymap.set('i', ';', ';<c-g>u', {})
+inoremap(",", ",<c-g>u")
+inoremap(".", ".<c-g>u")
+inoremap("!", "!<c-g>u")
+inoremap("?", "?<c-g>u")
+inoremap(";", ";<c-g>u")
+
+-- Search and replace
+nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")

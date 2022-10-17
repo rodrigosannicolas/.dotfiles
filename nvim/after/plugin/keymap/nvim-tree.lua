@@ -1,1 +1,5 @@
-vim.keymap.set('n', '<Leader>n', ':NvimTreeToggle<CR>', {})
+local Remap = require("config.keymap")
+
+local nnoremap = Remap.nnoremap
+
+nnoremap("<Leader>n", ":NvimTreeToggle<CR>")
