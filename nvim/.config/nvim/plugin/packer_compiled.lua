@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ale = {
+    loaded = true,
+    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
   ["ayu-vim"] = {
     loaded = true,
     path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/ayu-vim",
@@ -93,6 +98,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  fzf = {
+    loaded = true,
+    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -134,15 +149,10 @@ _G.packer_plugins = {
     path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["plenary.nvim"] = {
+  ripgrep = {
     loaded = true,
-    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
+    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/ripgrep",
+    url = "https://github.com/BurntSushi/ripgrep"
   },
   ["tokyonight.nvim"] = {
     loaded = true,

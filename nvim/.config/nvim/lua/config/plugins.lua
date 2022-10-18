@@ -13,7 +13,11 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
 	-- Fuzzy finder
-  use { "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } }
+  use { 'junegunn/fzf', run = ":call fzf#install()" }
+  use 'junegunn/fzf.vim'
+
+  -- Line oriented search tool
+  use "BurntSushi/ripgrep"
 
   -- Airline
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
@@ -31,4 +35,7 @@ return require("packer").startup(function(use)
 
   -- Git inline blame
   use { 'lewis6991/gitsigns.nvim' }
+
+  -- Linting
+  use "dense-analysis/ale"
 end)
