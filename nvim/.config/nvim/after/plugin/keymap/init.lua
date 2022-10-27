@@ -41,6 +41,15 @@ nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- Grep word under cursor
 nnoremap("<leader>g", ":grep --exclude-dir=node_modules -i -R <C-r><C-w> .")
 
+-- Auto close brackets
+inoremap('"', '""<left>')
+inoremap("'", "''<left>")
+inoremap("(", "()<left>")
+inoremap("[", "[]<left>")
+inoremap("{", "{}<left>")
+inoremap("{<CR>", "{<CR>}<ESC>O")
+inoremap("{;<CR>", "{<CR>};<ESC>O")
+
 -- Disable arrow keys
 nnoremap("<Down>", "<Nop>")
 nnoremap("<Left>", "<Nop>")
