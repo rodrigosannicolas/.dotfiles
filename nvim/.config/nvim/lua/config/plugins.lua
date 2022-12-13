@@ -5,6 +5,8 @@ return require("packer").startup(function(use)
   -- Colorscheme
   use "ayu-theme/ayu-vim"
   use "folke/tokyonight.nvim"
+  use "sainnhe/everforest"
+  use "arcticicestudio/nord-vim"
 
 	-- File explorer
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } }
