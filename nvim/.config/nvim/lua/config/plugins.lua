@@ -3,7 +3,6 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- Colorscheme
-  use "ayu-theme/ayu-vim"
   use({ 'rose-pine/neovim', as = 'rose-pine' })
 
 	-- File explorer
