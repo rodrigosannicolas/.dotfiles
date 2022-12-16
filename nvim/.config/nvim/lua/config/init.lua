@@ -1,8 +1,6 @@
 require("config.ale")
 require("config.gitsigns")
 require("config.lualine")
-require("config.nvim-cmp")
-require("config.nvim-lspconfig")
 require("config.nvim-tree")
 require("config.rosepine")
 require("config.set")
