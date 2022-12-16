@@ -4,9 +4,9 @@ return require("packer").startup(function(use)
 
   -- Colorscheme
   use "ayu-theme/ayu-vim"
-  use "folke/tokyonight.nvim"
-  use "sainnhe/everforest"
-  use "arcticicestudio/nord-vim"
+  use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
+        vim.cmd('colorscheme rose-pine')
+  end})
 
 	-- File explorer
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } }
@@ -15,11 +15,7 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
 	-- Fuzzy finder
-  use { 'junegunn/fzf', run = ":call fzf#install()" }
-  use 'junegunn/fzf.vim'
-
-  -- Line oriented search tool
-  use "BurntSushi/ripgrep"
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
 
   -- Airline
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
