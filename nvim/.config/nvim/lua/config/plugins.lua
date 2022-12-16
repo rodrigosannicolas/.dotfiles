@@ -4,9 +4,7 @@ return require("packer").startup(function(use)
 
   -- Colorscheme
   use "ayu-theme/ayu-vim"
-  use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
-        vim.cmd('colorscheme rose-pine')
-  end})
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
 
 	-- File explorer
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } }
