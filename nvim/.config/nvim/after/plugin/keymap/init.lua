@@ -1,51 +1,45 @@
-local Remap = require("config.keymap")
-
-local nnoremap = Remap.nnoremap
-local inoremap = Remap.inoremap
-local vnoremap = Remap.vnoremap
-
 -- Moving through splits
-nnoremap("<Leader>h", "<C-W>h")
-nnoremap("<Leader>j", "<C-W>j")
-nnoremap("<Leader>k", "<C-W>k")
-nnoremap("<Leader>l", "<C-W>l")
+vim.keymap.set("n", "<Leader>h", "<C-W>h")
+vim.keymap.set("n", "<Leader>j", "<C-W>j")
+vim.keymap.set("n", "<Leader>k", "<C-W>k")
+vim.keymap.set("n", "<Leader>l", "<C-W>l")
 
 -- Redo
-nnoremap("<Leader>u", "<C-R>")
+vim.keymap.set("n", "<Leader>u", "<C-R>")
 
 -- Close current buffer
-nnoremap("<Leader>q", ":q<CR>")
+vim.keymap.set("n", "<Leader>q", ":q<CR>")
 
 -- Keep it centered when scrolling
-nnoremap("n", "nzz")
-nnoremap("N", "Nzz")
-nnoremap("J", "mzJ`z")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- Move to begining/end of line
-nnoremap("H", "^")
-nnoremap("L", "$")
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
 
 -- Enter normal mode using jj
-inoremap("jj", "<esc>")
+vim.keymap.set("i", "jj", "<esc>")
 
 -- Undo breakpoints
-inoremap(",", ",<c-g>u")
-inoremap(".", ".<c-g>u")
-inoremap("!", "!<c-g>u")
-inoremap("?", "?<c-g>u")
-inoremap(";", ";<c-g>u")
+vim.keymap.set("i", ",", ",<c-g>u")
+vim.keymap.set("i", ".", ".<c-g>u")
+vim.keymap.set("i", "!", "!<c-g>u")
+vim.keymap.set("i", "?", "?<c-g>u")
+vim.keymap.set("i", ";", ";<c-g>u")
 
 -- Search and replace
-nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Grep word under cursor
-nnoremap("<leader>g", ":grep --exclude-dir=node_modules -i -n -R <C-r><C-w> .")
+vim.keymap.set("n", "<leader>g", ":grep --exclude-dir=node_modules -i -n -R <C-r><C-w> .")
 
 -- Auto close brackets
-inoremap('"', '""<left>')
-inoremap("'", "''<left>")
-inoremap("(", "()<left>")
-inoremap("[", "[]<left>")
-inoremap("{", "{  }<left><left>")
-inoremap("{<CR>", "{<CR>}<ESC>O")
-inoremap("{;<CR>", "{<CR>};<ESC>O")
+vim.keymap.set("i", '"', '""<left>')
+vim.keymap.set("i", "'", "''<left>")
+vim.keymap.set("i", "(", "()<left>")
+vim.keymap.set("i", "[", "[]<left>")
+vim.keymap.set("i", "{", "{  }<left><left>")
+vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O")
+vim.keymap.set("i", "{;<CR>", "{<CR>};<ESC>O")
