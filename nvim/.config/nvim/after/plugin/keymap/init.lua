@@ -10,11 +10,6 @@ vim.keymap.set("n", "<Leader>u", "<C-R>")
 -- Close current buffer
 vim.keymap.set("n", "<Leader>q", ":q<CR>")
 
--- Keep it centered when scrolling
-vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "N", "Nzz")
-vim.keymap.set("n", "J", "mzJ`z")
-
 -- Move to begining/end of line
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
@@ -43,3 +38,15 @@ vim.keymap.set("i", "[", "[]<left>")
 vim.keymap.set("i", "{", "{  }<left><left>")
 vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O")
 vim.keymap.set("i", "{;<CR>", "{<CR>};<ESC>O")
+
+-- Move lines up and down while in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Center cursor
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
