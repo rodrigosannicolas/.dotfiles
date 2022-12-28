@@ -23,6 +23,9 @@ return require("packer").startup(function(use)
   -- Linting
   use "dense-analysis/ale"
 
+  -- Git wrapper
+  use('tpope/vim-fugitive')
+
   -- Language Server Provider
   use {
     'VonHeikemen/lsp-zero.nvim',
