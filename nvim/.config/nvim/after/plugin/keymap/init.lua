@@ -16,6 +16,7 @@ vim.keymap.set("n", "L", "$")
 
 -- Enter normal mode using jj
 vim.keymap.set("i", "jj", "<esc>")
+vim.keymap.set("t", "jj", "<C-\\><C-n>")
 
 -- Undo breakpoints
 vim.keymap.set("i", ",", ",<c-g>u")
@@ -30,15 +31,6 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>
 -- Grep word under cursor
 vim.keymap.set("n", "<leader>g", ":grep --exclude-dir=node_modules -i -n -R <C-r><C-w> .")
 
--- Auto close brackets
-vim.keymap.set("i", '"', '""<left>')
-vim.keymap.set("i", "'", "''<left>")
-vim.keymap.set("i", "(", "()<left>")
-vim.keymap.set("i", "[", "[]<left>")
-vim.keymap.set("i", "{", "{  }<left><left>")
-vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O")
-vim.keymap.set("i", "{;<CR>", "{<CR>};<ESC>O")
-
 -- Move lines up and down while in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -49,4 +41,3 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-

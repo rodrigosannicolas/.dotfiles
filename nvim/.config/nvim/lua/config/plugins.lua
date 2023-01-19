@@ -4,6 +4,7 @@ return require("packer").startup(function(use)
 
   -- Colorscheme
   use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- File explorer
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } }
@@ -25,6 +26,12 @@ return require("packer").startup(function(use)
 
   -- Git wrapper
   use('tpope/vim-fugitive')
+
+  -- Auto pairs
+  use {	"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
+
+  -- Indent blank lines
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Language Server Provider
   use {
