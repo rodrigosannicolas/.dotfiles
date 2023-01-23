@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
 
 	-- Fuzzy finder
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Airline
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
