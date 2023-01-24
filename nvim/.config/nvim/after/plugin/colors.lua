@@ -1,2 +1,2 @@
--- vim.cmd.colorscheme("rose-pine")
-vim.cmd.colorscheme("catppuccin-macchiato")
+vim.cmd.colorscheme("rose-pine")
+-- vim.cmd.colorscheme("catppuccin-macchiato")
