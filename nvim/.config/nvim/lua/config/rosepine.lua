@@ -35,6 +35,6 @@ require('rose-pine').setup({
 
 	-- Change specific vim highlight groups
 	highlight_groups = {
-		ColorColumn = { bg = 'gold' }
+		ColorColumn = { bg = '#2C2E43' }
 	}
 })

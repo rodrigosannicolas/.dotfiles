@@ -1,7 +1,8 @@
 local lsp = require('lsp-zero')
+local nvim_lsp = require('lspconfig')
 
 lsp.preset('recommended')
-lsp.ensure_installed({ 'tsserver', 'eslint', 'sumneko_lua' })
+lsp.ensure_installed({ 'tsserver', 'eslint', 'sumneko_lua'})
 
 -- Choose first option when using lsp's go-to-definition (this is to avoid always showing 
 -- node_modules as an option)
@@ -37,8 +38,8 @@ end
 
 lsp.on_attach(function (client, bufnr)
   local opts = {buffer = bufnr, remap = false}
-      local bufopts = { noremap=true, silent=true, buffer=bufnr }
-      vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition{on_list=on_list} end, bufopts)
-  end)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition{on_list=on_list} end, bufopts)
+end)
 
 lsp.setup()
