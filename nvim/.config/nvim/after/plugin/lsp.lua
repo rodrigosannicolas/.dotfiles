@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 local nvim_lsp = require('lspconfig')
 
 lsp.preset('recommended')
-lsp.ensure_installed({ 'tsserver', 'eslint', 'sumneko_lua'})
+lsp.ensure_installed({ 'tsserver', 'eslint', 'sumneko_lua', 'solargraph' })
 
 -- Choose first option when using lsp's go-to-definition (this is to avoid always showing 
 -- node_modules as an option)

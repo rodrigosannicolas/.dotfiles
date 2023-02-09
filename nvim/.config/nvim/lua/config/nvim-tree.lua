@@ -3,8 +3,8 @@ vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
-  open_on_setup = false,
-  open_on_tab = false,
+  open_on_setup = true,
+  open_on_tab = true,
   view = {
     adaptive_size = true,
     mappings = {

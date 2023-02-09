@@ -5,8 +5,8 @@ vim.keymap.set("n", "<Leader>k", "<C-W>k")
 vim.keymap.set("n", "<Leader>l", "<C-W>l")
 
 -- Moving through tabs
-vim.keymap.set("n", "<tab>", "gt")
-vim.keymap.set("n", "<S-tab>", "gT")
+vim.keymap.set("n", "<C-l>", "gt")
+vim.keymap.set("n", "<C-h>", "gT")
 
 -- Move to begining/end of line
 vim.keymap.set("n", "H", "^")
@@ -46,5 +46,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Delete from cursor to end of line
-vim.keymap.set("n", "<leader>d", "d$")
+-- Reorder opened tabs
+vim.keymap.set("n", "<leader>-", ":tabmove -1<CR>")
+vim.keymap.set("n", "<leader>+", ":tabmove +1<CR>")
