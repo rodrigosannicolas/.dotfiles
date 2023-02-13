@@ -34,6 +34,9 @@ return require("packer").startup(function(use)
   -- Indent blank lines
   use "lukas-reineke/indent-blankline.nvim"
 
+  -- Comment lines
+  use "tpope/vim-commentary"
+
   -- Language Server Provider
   use {
     'VonHeikemen/lsp-zero.nvim',
