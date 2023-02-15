@@ -18,6 +18,9 @@ vim.keymap.set("n", "<Leader>u", "<C-R>")
 -- Close current buffer
 vim.keymap.set("n", "<Leader>q", ":q<CR>")
 
+-- Save current buffer
+vim.keymap.set("n", "<Leader>w", ":wa<CR>")
+
 -- Enter normal mode using jj
 vim.keymap.set("i", "jj", "<esc>")
 vim.keymap.set("t", "jj", "<C-\\><C-n>")

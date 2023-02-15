@@ -39,7 +39,7 @@ require('lualine').setup {
     lualine_c = {{ 'filename', path = 1 }},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'tabs' }
+    lualine_z = {{ 'tabs', mode = 2 }}
   },
   winbar = {},
   inactive_winbar = {},
