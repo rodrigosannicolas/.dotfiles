@@ -34,12 +34,12 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-    lualine_a = {},
+    lualine_a = {{ 'tabs', max_length=vim.o.columns, mode = 1 }},
     lualine_b = {},
-    lualine_c = {{ 'filename', path = 1 }},
+    lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {{ 'tabs', mode = 2 }}
+    lualine_z = {{ 'filename', path = 1 }}
   },
   winbar = {},
   inactive_winbar = {},
