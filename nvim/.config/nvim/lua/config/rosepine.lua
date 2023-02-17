@@ -38,3 +38,5 @@ require('rose-pine').setup({
 		ColorColumn = { bg = '#2C2E43' }
 	}
 })
+
+vim.cmd.colorscheme("rose-pine")

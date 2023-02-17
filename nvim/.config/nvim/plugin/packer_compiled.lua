@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/ale",
     url = "https://github.com/dense-analysis/ale"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/rodrigosannicolas/.local/share/nvim/site/pack/packer/start/cmp-buffer",

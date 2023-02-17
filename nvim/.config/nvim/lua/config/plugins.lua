@@ -4,7 +4,6 @@ return require("packer").startup(function(use)
 
   -- Colorscheme
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- File explorer
   use { "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } }
