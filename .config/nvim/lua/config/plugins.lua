@@ -36,6 +36,9 @@ return require("packer").startup(function(use)
   -- Comment lines
   use "tpope/vim-commentary"
 
+  -- Rust Support
+  use 'rust-lang/rust.vim'
+
   -- Language Server Provider
   use {
     'VonHeikemen/lsp-zero.nvim',
