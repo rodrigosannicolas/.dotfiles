@@ -1,5 +1,5 @@
 vim.g.mapleader = " "                                    -- Map leader to empty space
-
+vim.opt.guicursor = ""
 vim.opt.number = true                                    -- Show line numbers
 vim.opt.relativenumber = true                            -- Toggle hybrid line numbers
 vim.opt.wrap = false                                     -- Disable word wrapping
