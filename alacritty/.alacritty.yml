@@ -1,17 +1,15 @@
 window:
-  opacity: 1
+  opacity: 0.98
   decorations: none
-
 font:
-  size: 11.5
+  size: 11
   normal:
     family: MesloLGS NF
   offset:
-    y: 23
+    y: 25
   glyph_offset:
     x: 0
     y: 10
-
 colors:
   primary:
     background: '#111921'

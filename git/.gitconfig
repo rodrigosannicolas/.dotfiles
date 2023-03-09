@@ -1,18 +1,31 @@
 [user]
-	email = rodrigosannicolas@gmail.com
-	name = Rodrigo San Nicolas
+  email = rodrigosannicolas@gmail.com
+  name = Rodrigo San Nicolas
 [init]
   defaultBranch = main
 [core]
-	editor = nvim
+  editor = nvim
 [alias]
   a = add
+  aa = add .
   c = commit
   cm = commit -m
   co = checkout
   cob = checkout -b
-  f = fetch origin
-  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  d = diff
+  fo = fetch origin
+  lg = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  m = merge
+  pl = pull origin
   po = push origin
-  psuo = push --set-upstream origin
-  st = status -sb
+  pof = push -f origin
+  puo = push -u origin
+  rb = rebase
+  rbc = rebase --continue
+  rba = rebase --abort
+  undo = reset --soft HEAD~1
+  s = status
+  ss = status -sb
+  st = stash
+  stp = stash pop
+  std = stash drop
