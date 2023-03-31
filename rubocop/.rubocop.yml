@@ -45,3 +45,6 @@ Naming/AccessorMethodName:
 
 Style/OptionalBooleanParameter:
   Enabled: false
+
+Layout/FirstHashElementIndentation:
+  Enabled: false

@@ -1,6 +1,8 @@
 [user]
   email = rodrigosannicolas@gmail.com
   name = Rodrigo San Nicolas
+[color]
+  ui = true
 [init]
   defaultBranch = main
 [core]

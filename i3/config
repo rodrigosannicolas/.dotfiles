@@ -1,0 +1,8 @@
+set $mod Mod1
+
+# change focus
+bindsym $mode+h focus left
+bindsym $mode+j focus down
+bindsym $mode+k focus up
+bindsym $mode+l focus right
+

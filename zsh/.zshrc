@@ -77,7 +77,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,3 +126,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases
 source ~/.zsh_aliases
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k/.p10k.zsh.
+[[ ! -f ~/.dotfiles/p10k/.p10k.zsh ]] || source ~/.dotfiles/p10k/.p10k.zsh
