@@ -1,8 +1,0 @@
-require("config.ale")
-require("config.gitsigns")
-require("config.indent-blankline")
-require("config.lualine")
-require("config.nvim-tree")
-require("config.rosepine")
-require("config.set")
-require("config.treesitter")
