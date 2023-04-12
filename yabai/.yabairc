@@ -39,4 +39,3 @@ yabai -m config                                 \
 
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^FortiClient$"     manage=off
