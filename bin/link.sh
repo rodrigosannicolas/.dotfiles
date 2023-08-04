@@ -9,7 +9,7 @@ create_symlink () {
 
 create_symlink "alacritty/.alacritty.yml" ".alacritty.yml"
 create_symlink "git/.gitconfig"           ".gitconfig"
-create_symlink "i3/config"                ".config/i3/config"
+# create_symlink "i3/config"                ".config/i3/config"
 create_symlink "nvim"                     ".config/nvim"
 create_symlink "p10k/.p10k.zsh"           ".p10k.zsh"
 create_symlink "rubocop/.rubocop.yml"     ".rubocoop.yml"

@@ -1,6 +1,3 @@
-window:
-  opacity: 0.98
-  decorations: none
 font:
   size: 11
   normal:
@@ -10,25 +7,51 @@ font:
   glyph_offset:
     x: 0
     y: 10
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+  padding:
+    x: 2
+    y: 2
 colors:
   primary:
-    background: '#111921'
-    foreground: '#ebe6d7'
+    background: "0x232136"
+    foreground: "0xe0def4"
+  cursor:
+    text: "0xe0def4"
+    cursor: "0x56526e"
+  vi_mode_cursor:
+    text: "0xe0def4"
+    cursor: "0x56526e"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0xe0def4"
+    background: "0x44415a"
   normal:
-    black: '#000000'
-    red: '#ff4c41'
-    green: '#c4d264'
-    yellow: '#eccd58'
-    blue: '#40b2e0'
-    magenta: '#f5878a'
-    cyan: '#a3e9d4'
-    white: '#fffefe'
+    black: "0x393552"
+    red: "0xeb6f92"
+    green: "0x3e8fb0"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xea9a97"
+    white: "0xe0def4"
   bright:
-    black: '#414141'
-    red: '#ff7c77'
-    green: '#edfb95'
-    yellow: '#fff68b'
-    blue: '#77dcff'
-    magenta: '#ffb4b8'
-    cyan: '#d0fefd'
-    white: '#fffefe'
+    black: "0x6e6a86"
+    red: "0xeb6f92"
+    green: "0x3e8fb0"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xea9a97"
+    white: "0xe0def4"
+  hints:
+    start:
+      foreground: "#908caa"
+      background: "#2a273f"
+    end:
+      foreground: "#6e6a86"
+      background: "#2a273f"

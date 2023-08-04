@@ -5,3 +5,4 @@ alias ls='ls -la'
 alias p='lsof -i'
 alias so='source'
 alias vim='nvim'
+alias chrome="open -a 'Google Chrome'"
