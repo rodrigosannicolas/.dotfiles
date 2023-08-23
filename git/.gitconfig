@@ -31,3 +31,4 @@
   st = stash
   stp = stash pop
   std = stash drop
+  sur = submodule update --remote
