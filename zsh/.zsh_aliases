@@ -1,8 +1,51 @@
-alias cl='clear'
-alias dot='cd ~/.dotfiles/ && vim && cd -'
-alias g='git'
-alias ls='ls -la'
-alias p='lsof -i'
-alias so='source'
-alias vim='nvim'
-alias chrome="open -a 'Google Chrome'"
+# ╔═══════════════════════════════════════════════════╗
+# ║                  Custom Aliases                   ║ 
+# ╚═══════════════════════════════════════════════════╝
+
+# Basic Shell Commands
+alias cl='clear' # Clear the terminal screen
+alias dot='cd ~/.dotfiles/ && vim && cd -' # Quickly navigate to dotfiles directory and open Vim
+alias ls='ls --color -la' # List files and directories in long format
+alias x='exit' # Exit the shell
+alias grep='grep --exclude-dir=node_modules -i -n -R' # Recursive case-insensitive grep with line numbers 
+
+# Version Control
+alias g='git' # Short for 'git'
+
+# Network and Processes
+alias p='lsof -i' # List open network connections and associated processes
+
+# Shell and Text Editor
+alias so='source' # Source (reload) the current shell session
+alias vim='nvim' # Use Neovim as the default text editor
+alias vi='nvim' # Use Neovim as the default text editor
+alias r='source ~/.zshrc' # Reload zshrc
+
+# Applications
+alias chrome="open -a 'Google Chrome'" # Open Google Chrome
+
+# ╔═════════════════════════════════════════════════════╗
+# ║                  Docker Aliases                     ║
+# ╚═════════════════════════════════════════════════════╝
+
+# Basic Docker Commands
+alias d='docker' # Short for 'docker'
+alias dps='docker ps' # List running containers
+alias dpsa='docker ps -a' # List all containers, including stopped ones
+alias d-prune='docker system prune -a' # Clean up Docker system, remove unused data
+
+# Container Operations
+alias dex='docker exec -it' # Execute a command inside a running container
+alias drm='docker rm' # Remove Docker container
+alias dstop='docker stop' # Stop a running container
+alias d-stop-containers='docker kill $(docker ps -q)' # Stop all running containers
+alias d-remove-containers='docker rm $(docker ps -a -q)' # Remove all docker containers, including stopped ones
+
+# Image Operations
+alias d-images='docker images' # List all images
+alias d-remove-images='docker rmi $(docker images -q)' # Remove all docker images
+
+# Volume operations
+alias dvls='docker volume ls' # List Docker volumes
+alias dvrm='docker volume rm' # Remove Docker volumes
+alias d-remove-volumes='docker volume rm $(docker volume ls -q)' # Remove all docker volumes
